@@ -33,8 +33,8 @@ The wrapper is very minimilistic in its current form as most of the API has not 
 However, this may help others
 
 # Implemented Calls
-account_view
-contact_list
-contact_view
-list_list
-tags_list
+- account_view
+- contact_list
+- contact_view
+- list_list
+- tags_list
