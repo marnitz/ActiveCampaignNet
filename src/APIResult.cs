@@ -20,6 +20,6 @@ namespace ActiveCampaignNet
 
         public string Data { get; set; }
 
-        public bool IsSuccessful => Code == 1;
+        public bool IsSuccessful { get { return Code == 1; } }
     }
 }
