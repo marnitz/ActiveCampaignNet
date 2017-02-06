@@ -51,10 +51,13 @@
     <Compile Include="ApiResult.cs" />
     <Compile Include="Bounces\BouncesResult.cs" />
     <Compile Include="Contact\ContactActionResult.cs" />
+    <Compile Include="Contact\Contact.cs" />
+    <Compile Include="Contact\ContactAddResult.cs" />
     <Compile Include="Contact\ContactFilters.cs" />
     <Compile Include="Contact\ContactFunctions.cs" />
     <Compile Include="Contact\ContactListResult.cs" />
     <Compile Include="Contact\ContactViewResult.cs" />
+    <Compile Include="Fields\Enums.cs" />
     <Compile Include="Fields\FieldResult.cs" />
     <Compile Include="Fields\OptionResult.cs" />
     <Compile Include="Filters\FilterOptions.cs" />

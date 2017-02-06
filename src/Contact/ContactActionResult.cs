@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ActiveCampaignNet.Contact
 {
-    public class ContactActionResult
+    public class ContactActionResult:ApiResult
     {
         [JsonProperty("text")]
         public string Text { get; set; }
