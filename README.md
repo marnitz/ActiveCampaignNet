@@ -34,7 +34,17 @@ However, this may help others
 
 # Implemented Calls
 - account_view
+- contact_add
+- contact_delete
+- contact_delete_list
+- contact_edit
 - contact_list
+- contact_note_delete
+- contact_sync
+- contact_tag_add
+- contact_tag_remove
 - contact_view
+- contact_view_email
+- contact_view_hash
 - list_list
 - tags_list
