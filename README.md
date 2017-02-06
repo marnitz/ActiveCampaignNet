@@ -1,45 +1,40 @@
 # ActiveCampaignNet
-ActiveCampaignNet is a .NET class library that provides an easy-to-use interface for the http://www.activecampaign.com/ web api
+Forked from https://github.com/Selz/ActiveCampaignNet
+The intention is to add an object model wrapper to make calling the API easier.
 
 # Examples
 
-## Initialization of the client 
+## Usage
 
 ```csharp
-ActiveCampaignClient client = new ActiveCampaignClient("<You-api-key>", "https://some-url.api-us1.com");
-```
+//Initialise
+ string YourKey = "";
+ string YourBaseURL = "";
+ var x = new ActiveCampaignNet.ActiveCampaignClient(YourKey,YourBaseURL);
 
-## Adding a contact
+//AccountView
+ var z = x.AccountView.AccountView();
+ MessageBox.Show(z.FirstName + " " + z.LastName + " " + z.SubscriberLimit.ToString());
 
-```csharp
-var client = new ActiveCampaignClient("<You-api-key>", "https://some-url.api-us1.com");
+//Fetch a contact by id
+ var contact = x.Contact.ContactView(1);
+ MessageBox.Show(contact.FullName);
 
-var result = client.Api("contact_add", new NameValueCollection
- {
-     {"email", "someemail@gmail.com"},
-     {"first_name", "mathieu"},
-     {"last_name", "kempe"},
-     {"p[1]", "1"}
+//Fetch contacts with a specific tag
+ var zz = x.Contact.ContactList(o => {
+     o.TagId = new int[] { 1,2 };                
  });
 
- if (result.IsSuccessful)
- {
-     Console.WriteLine(result.Message);
- }
-
+ var msg = zz.Select(o => string.Format("{0} -> {1} : {2}", o.Id, o.FullName,string.Join(",",o.Tags)));
+ MessageBox.Show(string.Join("\r\n",msg));
 ```
 
+The wrapper is very minimilistic in its current form as most of the API has not been mapped. 
+However, this may help others
 
-## Lists List
-
-```csharp
-var result = client.Api("list_list", new NameValueCollection
-{
-    {"ids", "all"}
-});
-
-if (result.IsSuccessful)
-{
-    Console.WriteLine(result.Data);
-}
-```
+# Implemented Calls
+- account_view
+- contact_list
+- contact_view
+- list_list
+- tags_list
